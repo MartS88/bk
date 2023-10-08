@@ -1,0 +1,34 @@
+.card {
+  margin: 0 auto;
+  width: 300px;
+  border: 1.5px solid #f5f5f5;
+  box-shadow: 5px 4px 8px -1px rgba(10, 5, 1, 0.3);
+}
+.card .card_block {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+.card .card_block img {
+  width: 150px;
+  border-radius: 10%;
+  margin-bottom: 10px;
+}
+.card .card_block h2,
+.card .card_block span,
+.card .card_block p {
+  font-size: 1rem;
+  font-family: "Roboto";
+  text-align: center;
+}
+.card .card_block h2 {
+  font-size: 1.2rem;
+}
+.card .card_block p {
+  color: gray;
+}
+
+/*# sourceMappingURL=Card.module.css.map */

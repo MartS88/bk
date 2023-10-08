@@ -1,0 +1,18 @@
+.app {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: #e5e7eb;
+}
+.app img {
+  transform: translate(0, -50%);
+  width: 170px;
+}
+.app .cards {
+  width: 100%;
+}
+
+/*# sourceMappingURL=App.module.css.map */

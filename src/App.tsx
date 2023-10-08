@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import s from './App.module.scss';
+import Cards from './components/cards/Cards';
+import SearchForm from "./components/searchform/SearchForm";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+    return (
+        <div className={s.app}>
+
+            <img src={require('../src/assets/logo.png')}/>
+
+            <div>
+                <SearchForm/>
+            </div>
+            <div className={s.cards}>
+                <Cards/>
+            </div>
+
+        {/*    SDELAT" Layout pervaja stranica <HOME/> eto SearchForm i Cards/
+
+        vtoroaj SEARCH FORM i CARD
+        */}
+        </div>
+    );
 }
 
 export default App;

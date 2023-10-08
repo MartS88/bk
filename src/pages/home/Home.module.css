@@ -1,0 +1,22 @@
+.home {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "block" "cards";
+}
+.home .block {
+  padding-top: 100px;
+  background: #f5f5f5 !important;
+  grid-area: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+}
+.home .cards {
+  background: gray !important;
+  grid-area: cards;
+}
+
+/*# sourceMappingURL=Home.module.css.map */

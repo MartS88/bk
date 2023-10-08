@@ -1,0 +1,148 @@
+.search_form {
+  margin-bottom: 10px;
+
+  .search_block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+
+    h2 {
+      font-size: 1.1rem;
+      font-family: 'Roboto';
+      margin: auto !important;
+
+    }
+
+    .input_block {
+      width: 100%;
+      display: flex;
+      align-items: baseline;
+
+
+      input {
+
+        background: white;
+        width: 100%;
+        max-width: 400px;
+        padding: 10px;
+
+        border: 1px solid #80b5ef;
+        border-radius: 8px;
+        font-size: 1rem;
+        color: black;
+        cursor: pointer;
+
+
+        &::placeholder {
+          font-family: 'Roboto';
+          color: grey;
+          font-size: 0.8rem;
+          font-weight: 500;
+          padding-left: 5px;
+          transition: all 0.5s ease;
+        }
+
+        &:hover {
+
+        }
+
+        &:focus-within {
+          outline: none;
+          &::placeholder {
+            font-size: 0.6rem;
+            transform: translateY(-10px);
+
+          }
+        }
+      }
+
+      svg {
+        width: 30px;
+        transform: translate(-130%, 35%);
+        pointer-events: none!important;
+      }
+    }
+
+    .button_block {
+
+      display: flex;
+      align-items: center;
+
+      button {
+
+        width: 100%;
+        background: rgb(56, 97, 251);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        cursor: pointer;
+        padding: 10px 25px;
+        color: white;
+        transition: all .1s ease;
+        border: none;
+
+
+        &:hover {
+          cursor: pointer;
+          background: rgb(56, 134, 251);
+
+        }
+      }
+
+
+    }
+
+    .select_block {
+
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+
+
+      label {
+        font-size: 1.2rem;
+        font-family: 'Roboto';
+      }
+
+      .categories {
+        outline: none;
+        padding: 9px;
+        font-size: 1rem;
+        border-radius: 10px;
+        transition: all .1s ease;
+        background: white;
+        border: 1px solid #80b5ef;
+        font-family: 'Roboto';
+
+
+        &:hover {
+          border: 1px solid #80b5ef;
+          cursor: pointer;
+        }
+      }
+
+      .relevance {
+        outline: none;
+        padding: 9px;
+        font-size: 1rem;
+        border: 1px solid #80b5ef;
+        border-radius: 10px;
+        background: white;
+        transition: all .1s ease;
+        font-family: 'Roboto';
+
+        &:hover {
+
+          cursor: pointer;
+        }
+
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.cards {
+
+  margin: 0 auto;
+  width: 100%;
+  height: 50vh;
+
+  .color_ring {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .cards_block {
+
+    background: whitesmoke!important;
+
+    div {
+      padding-top: 20px;
+      margin-bottom: 20px;
+      span {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        font-family: 'Roboto';
+      }
+    }
+  }
+  .card_block {
+    justify-content: space-between!important;
+    display: grid!important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))!important;
+    gap: 20px!important;
+  }
+}
