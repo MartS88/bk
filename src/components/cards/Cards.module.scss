@@ -2,7 +2,6 @@
 
   margin: 0 auto;
   width: 100%;
-  height: 50vh;
 
   .color_ring {
 
@@ -15,6 +14,10 @@
   .cards_block {
 
     background: whitesmoke!important;
+
+    .load_more_button {
+      background: black;
+    }
 
     div {
       padding-top: 20px;
@@ -32,7 +35,26 @@
   .card_block {
     justify-content: space-between!important;
     display: grid!important;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))!important;
-    gap: 20px!important;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))!important;
+    gap: 10px!important;
   }
+  .error {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+
+    svg {
+      color: red;
+      width: 30px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-family: 'Roboto';
+    }
+
+  }
+
 }

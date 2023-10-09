@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import s from './SearchForm.module.scss';
 import {SELECT_OPTIONS, SORT_SELECT_OPTIONS} from '../../constants/constants';
 import {useGetBookQuery} from "../../services/booksApi";
-import {addBookArr, setIsError, setIsLoading} from '../../store/slice/bookSlice'
-import {useDispatch} from "react-redux";
+import {addBookArr, setIsError, setIsLoading, setSearchParams} from '../../store/slice/bookSlice'
+import {useDispatch, useSelector} from "react-redux";
 import {FcSearch} from 'react-icons/fc';
-
+import {RootState} from "../../store/store";
 
 
 
@@ -13,14 +13,17 @@ const SearchForm = () => {
     const [search, setSearch] = useState('');
     const [categoryOption, setCategoryOption] = useState(SELECT_OPTIONS[0].value);
     const [sortOption, setSortOption] = useState(SORT_SELECT_OPTIONS[0].value)
+    const startIndex = useSelector((state: RootState) => state.book.startIndex)
+
 
     const dispatch = useDispatch()
-
     const { data: bookData, isError, isLoading } = useGetBookQuery({
         search: search,
         categoryOption: categoryOption,
         sortOption: sortOption,
+        startIndex: startIndex,
     });
+
 
     if (isLoading) {
         dispatch(setIsLoading(true));
@@ -46,6 +49,7 @@ const SearchForm = () => {
         if (e.key === 'Enter'){
             dispatch(setIsLoading(true))
             dispatch(addBookArr(bookData));
+            dispatch(setSearchParams({ search: search, categoryOption: categoryOption, sortOption: sortOption , startIndex: 0 }));
             setSearch('')
         }
     }
@@ -54,12 +58,11 @@ const SearchForm = () => {
         dispatch(setIsLoading(true));
         dispatch(setIsError(false));
         dispatch(addBookArr(bookData));
+        dispatch(setSearchParams({ search: search, categoryOption: categoryOption, sortOption: sortOption , startIndex: 0 }));
         setSearch('')
 
-        setTimeout(() => {
-            dispatch(setIsLoading(false))
-        }, 2000)
     }
+
 
     return (
         <div className={s.search_form}>

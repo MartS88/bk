@@ -1,8 +1,28 @@
 .card {
   margin: 0 auto;
   width: 300px;
+  max-height: 520px;
+  background: white;
   border: 1.5px solid #f5f5f5;
   box-shadow: 5px 4px 8px -1px rgba(10, 5, 1, 0.3);
+  transform: scale(90%);
+  transition: all 0.3s ease !important;
+}
+.card:hover {
+  transform: scale(100%);
+}
+.card .more {
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: blue;
+  font-family: "Roboto";
+  display: flex;
+  justify-content: flex-end !important;
+  padding-right: 20px;
+  transition: all 0.1s ease;
+}
+.card .more:hover {
+  color: rgba(25, 25, 178, 0.97);
 }
 .card .card_block {
   padding: 15px;
@@ -10,7 +30,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2px;
 }
 .card .card_block img {
   width: 150px;
@@ -18,8 +37,7 @@
   margin-bottom: 10px;
 }
 .card .card_block h2,
-.card .card_block span,
-.card .card_block p {
+.card .card_block span {
   font-size: 1rem;
   font-family: "Roboto";
   text-align: center;
@@ -27,8 +45,18 @@
 .card .card_block h2 {
   font-size: 1.2rem;
 }
-.card .card_block p {
+.card .card_block .categorie {
+  font-size: 1rem !important;
+  font-family: "Roboto";
   color: gray;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+.card .card_block .author {
+  font-family: "Roboto";
+  font-size: 1.34rem;
+  color: rgba(25, 25, 178, 0.97);
 }
 
 /*# sourceMappingURL=Card.module.css.map */

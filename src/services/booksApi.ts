@@ -16,7 +16,7 @@ export const booksApi = createApi({
     }),
     endpoints: (builder) => ({
         GetBook: builder.query<any,GetBookParams>({
-            query: ({search,categoryOption,sortOption}) => `?q=${search}+subject:${categoryOption}&maxResults=40&startIndex=0&orderBy=${sortOption}&+&key=`
+            query: ({search,categoryOption,sortOption,startIndex}) => `?q=${search}+subject:${categoryOption}&maxResults=40&startIndex=${startIndex}&orderBy=${sortOption}&+&key=`
 
 }),
     })
@@ -27,5 +27,6 @@ export const {
 } = booksApi;
 
 
-// https://www.googleapis.com/books/v1/volumes?q=${search}&key=AIzaSyA6SaT23KNiiA6DnUfUQTvFeyAcQEkwnSU&maxResults=40
-// https://www.googleapis.com/books/v1/volumes?q=${search}&key=AIzaSyA6SaT23KNiiA6DnUfUQTvFeyAcQEkwnSU&maxResults=40
+
+// query: ({search,categoryOption,sortOption}) => `?q=${search}+subject:${categoryOption}&maxResults=40&startIndex=0&orderBy=${sortOption}&+&key=`
+// const startIndex = MAX_RESULTS * page;

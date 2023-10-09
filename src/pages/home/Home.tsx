@@ -5,24 +5,17 @@ import Cards from "../../components/cards/Cards";
 import Logo from "../../components/logo/Logo";
 
 const Home = () => {
+
+
     return (
         <div className={s.home}>
-
 
             <div className={s.block}>
                 <Logo/>
                 <SearchForm/>
 
             </div>
-            <Cards/>
-
-
-
-
-
-
-
-
+                <Cards/>
 
         </div>
     );

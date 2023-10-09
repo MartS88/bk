@@ -1,25 +1,47 @@
 import React from 'react';
 import s from './Card.module.scss'
-import {bookItem} from "../../../types/bookItem";
-const Card = ({book}: { book: bookItem }) => {
+import { bookItem } from "../../../types/bookItem";
+import {setSelectedBook} from "../../../store/slice/bookSlice";
+import {useDispatch} from "react-redux";
+import {useNavigate} from "react-router-dom";
+
+const Card = ({ book }: { book: bookItem }) => {
+
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+
+    const bookItemHander = (book: bookItem) => {
+       dispatch(setSelectedBook(book))
+    }
+
     return (
-        <div className={s.card}>
+        <div
+            onClick={() => bookItemHander(book)}
+            className={s.card}>
+            <span onClick={() => navigate('/card')} className={s.more}>More</span>
             <div className={s.card_block}>
+                <img src={book?.volumeInfo?.imageLinks?.smallThumbnail} width={150} draggable={false} alt={book?.volumeInfo?.title} />
 
-                <img src={book?.volumeInfo?.imageLinks?.smallThumbnail} width={150} draggable={false}/>
+                {book?.volumeInfo?.categories && (
 
-                <span>{book?.volumeInfo.authors && book?.volumeInfo?.authors[0]}</span>
+                    <span className={s.categorie}>{book?.volumeInfo?.categories[0]}</span>
+                )}
 
-                <h2> {book?.volumeInfo?.title}</h2>
+                <h2>{book?.volumeInfo?.title}</h2>
+
+                <div className={s.authors}>
+                    {book?.volumeInfo?.authors?.map((author, index) => (
+                        <span className={s.author} key={index}>{author}</span>
+                    ))}
+                </div>
 
 
-                <p>
-                {book?.volumeInfo?.description && book?.volumeInfo?.description.length > 300
-                    ? book?.volumeInfo?.description.substring(0, 300) + "..."
-                    : book?.volumeInfo?.description}
-                </p>
+
+
+
+
+
             </div>
-
         </div>
     );
 };

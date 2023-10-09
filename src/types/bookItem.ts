@@ -12,6 +12,7 @@ export interface bookItem {
         description: string;
         language: string;
         previewLink: string;
+        pageCount: number;
         imageLinks:{
             smallThumbnail: string;
             thumbnail: string;

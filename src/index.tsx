@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import {Provider} from "react-redux";
 import {setupStore} from './store/store'
 import Home from "./pages/home/Home";
+import CardContent from "./pages/cartcontent/CardContent";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -14,6 +15,7 @@ root.render(
         <Router>
             <Routes>
                 <Route path='/home' element={<Home/>}/>
+                <Route path='/card' element={<CardContent/>}/>
             </Routes>
         </Router>
     </Provider>
