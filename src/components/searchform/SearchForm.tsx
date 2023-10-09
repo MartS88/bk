@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import s from './SearchForm.module.scss';
 import {SELECT_OPTIONS, SORT_SELECT_OPTIONS} from '../../constants/constants';
 import {useGetBookQuery} from "../../services/booksApi";
@@ -13,7 +13,7 @@ const SearchForm = () => {
     const [search, setSearch] = useState('');
     const [categoryOption, setCategoryOption] = useState(SELECT_OPTIONS[0].value);
     const [sortOption, setSortOption] = useState(SORT_SELECT_OPTIONS[0].value)
-    const startIndex = useSelector((state: RootState) => state.book.startIndex)
+    const [startIndex, setStartIndex] = useState(0)
 
 
     const dispatch = useDispatch()
@@ -21,7 +21,7 @@ const SearchForm = () => {
         search: search,
         categoryOption: categoryOption,
         sortOption: sortOption,
-        startIndex: startIndex,
+        startIndex: 0,
     });
 
 
@@ -51,6 +51,7 @@ const SearchForm = () => {
             dispatch(addBookArr(bookData));
             dispatch(setSearchParams({ search: search, categoryOption: categoryOption, sortOption: sortOption , startIndex: 0 }));
             setSearch('')
+            setStartIndex(0)
         }
     }
 
@@ -60,6 +61,7 @@ const SearchForm = () => {
         dispatch(addBookArr(bookData));
         dispatch(setSearchParams({ search: search, categoryOption: categoryOption, sortOption: sortOption , startIndex: 0 }));
         setSearch('')
+        setStartIndex(0)
 
     }
 

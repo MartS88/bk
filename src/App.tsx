@@ -14,7 +14,7 @@ const App = () => {
                 <SearchForm/>
             </div>
             <div className={s.cards}>
-                <Cards/>
+
             </div>
 
         {/*    SDELAT" Layout pervaja stranica <HOME/> eto SearchForm i Cards/

@@ -12,7 +12,7 @@
 
 
   .cards_block {
-
+    padding-bottom: 50px;
     background: whitesmoke!important;
 
     .load_more_button {
@@ -56,5 +56,28 @@
     }
 
   }
+  .load_more_button {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 300px;
+      background: rgb(56, 97, 251)!important;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      cursor: pointer;
+      padding: 10px 25px;
+      color: white;
+      transition: all .1s ease;
+      border: none;
+
+
+      &:hover {
+        cursor: pointer;
+        background: rgb(56, 134, 251)!important;
+
+      }
+    }
 
 }

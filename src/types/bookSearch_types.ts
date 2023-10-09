@@ -2,10 +2,9 @@ import {bookItem} from "./bookItem";
 
 
 export interface BookSearchResult {
-    length: number,
-    kind: string;
-    totalItems: number,
-    startIndex?: number,
+
+    kind?: string;
+    totalItems?: number,
     items: bookItem[];
 
 }

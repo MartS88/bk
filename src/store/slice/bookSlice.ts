@@ -9,7 +9,9 @@ interface BookState {
     isError: boolean;
     selectedBook: bookItem | null;
     startIndex: number,
-    searchParams: GetBookParams | null
+    searchParams: GetBookParams | null,
+    searchMode: boolean;
+    updatedMode: boolean;
 }
 
 const initialState: BookState = {
@@ -19,6 +21,8 @@ const initialState: BookState = {
     selectedBook: null,
     startIndex: 0,
     searchParams: null,
+    searchMode: false,
+    updatedMode: false,
 
 };
 
