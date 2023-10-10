@@ -1,0 +1,112 @@
+.card {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+  border: 1.5px solid #f5f5f5;
+  box-shadow: 5px 4px 8px -1px rgba(10, 5, 1, 0.3);
+  transition: all 0.3s ease !important;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 25px 25px;
+}
+.card .img_block {
+  margin: 0 auto;
+  width: 80%;
+}
+.card .img_block img {
+  max-width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+.card .about_block {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card .about_block svg {
+  margin-left: auto !important;
+  color: red;
+  cursor: pointer;
+  transform: translate(90%, -50%);
+}
+.card .about_block div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.card .about_block div .publisher {
+  font-family: "Roboto";
+  font-size: 1rem;
+  color: blue;
+  margin-bottom: 5px;
+}
+.card .about_block div .authors {
+  font-family: "Roboto Light";
+  font-size: 1.1rem;
+  color: rgba(25, 25, 178, 0.97);
+  font-weight: 500;
+}
+.card .about_block div .authors label {
+  font-size: 1rem;
+  font-family: "Roboto";
+  color: darkviolet;
+  margin-bottom: 3px;
+}
+.card .about_block div .authors span {
+  font-family: "Roboto";
+  font-size: 1rem;
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+.card .about_block div h2 {
+  font-family: "Roboto";
+  font-size: 1.2rem;
+}
+.card .about_block div .description {
+  font-size: 1rem;
+  font-family: "Roboto";
+  font-weight: 500;
+}
+.card .about_block div .description a {
+  text-decoration: none;
+}
+.card .about_block div .description a .readmore {
+  color: darkviolet;
+  cursor: pointer;
+}
+.card .about_block div .categorie {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-family: "Roboto";
+  color: gray;
+  text-decoration: underline;
+  text-decoration-thickness: 1.3px;
+  text-underline-offset: 3.8px;
+}
+.card .about_block div .total_pages {
+  color: darkviolet;
+  font-family: "Roboto";
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    padding: 10px 10px;
+  }
+  .card .about_block svg {
+    margin-left: auto !important;
+    transform: translate(10%);
+  }
+  .card .about_block div .description {
+    font-size: 0.8rem;
+  }
+}
+
+/*# sourceMappingURL=Card.module.css.map */
