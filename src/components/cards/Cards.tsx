@@ -39,8 +39,7 @@ const Cards = () => {
     const handleLoadMoreClick = async () => {
 
             if (bookData && bookData?.totalItems !== undefined && startIndex <= bookData?.totalItems) {
-                console.log('statI', startIndex)
-                console.log('bookITems', bookData?.totalItems)
+
             try {
 
                 const responseData = await searchBooks();
