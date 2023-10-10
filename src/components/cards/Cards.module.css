@@ -28,7 +28,8 @@
   position: sticky;
   align-self: end;
 }
-.cards_block .start a {
+.cards_block .start span {
+  cursor: pointer;
   font-family: "Roboto";
   font-weight: 500 !important;
   color: rgb(56, 97, 251) !important;
@@ -37,7 +38,7 @@
   text-decoration: none;
   font-size: 1.5rem !important;
 }
-.cards_block .start a:hover {
+.cards_block .start span:hover {
   color: rgb(56, 134, 251) !important;
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -71,6 +72,11 @@
 .cards_block .button_block {
   padding-bottom: 100px;
 }
+.cards_block .button_block .no_more {
+  font-family: "Roboto";
+  font-size: 1.5rem !important;
+  color: darkviolet;
+}
 .cards_block .button_block .end {
   margin-bottom: 10px;
   font-family: "Roboto";
@@ -82,7 +88,8 @@
   text-decoration: none;
   padding-right: 10px;
 }
-.cards_block .button_block .end a {
+.cards_block .button_block .end span {
+  cursor: pointer;
   font-family: "Roboto";
   font-weight: 500 !important;
   color: rgb(56, 97, 251) !important;
@@ -92,7 +99,7 @@
   font-size: 1.5rem !important;
   transition: all 0.1s ease;
 }
-.cards_block .button_block .end a:hover {
+.cards_block .button_block .end span:hover {
   color: rgb(56, 134, 251) !important;
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -124,6 +131,17 @@
 .cards_block .button_block .load_more_button:hover {
   cursor: pointer;
   background: rgb(56, 134, 251) !important;
+}
+
+@media (max-width: 700px) {
+  .cards .cards_block .start {
+    justify-content: center !important;
+    padding-right: 0px;
+  }
+  .cards .button_block .end {
+    justify-content: center !important;
+    padding-right: 0px;
+  }
 }
 
 /*# sourceMappingURL=Cards.module.css.map */

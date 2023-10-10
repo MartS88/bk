@@ -33,7 +33,8 @@
     position: sticky;
     align-self: end;
 
-    a {
+    span {
+      cursor: pointer;
       font-family: 'Roboto';
       font-weight: 500 !important;
       color: rgb(56, 97, 251) !important;
@@ -91,6 +92,11 @@
   .button_block {
     padding-bottom: 100px;
 
+      .no_more {
+        font-family: 'Roboto';
+        font-size: 1.5rem!important;
+        color: darkviolet;
+      }
 
     .end {
       margin-bottom: 10px;
@@ -104,7 +110,8 @@
       padding-right: 10px;
 
 
-      a {
+      span {
+        cursor: pointer;
         font-family: 'Roboto';
         font-weight: 500 !important;
         color: rgb(56, 97, 251) !important;
@@ -157,5 +164,25 @@
     }
   }
 
+
+}
+
+@media (max-width: 700px) {
+  .cards {
+
+    .cards_block {
+
+      .start {
+        justify-content: center!important;
+        padding-right: 0px;
+      }
+    }
+    .button_block {
+      .end {
+        justify-content: center!important;
+        padding-right: 0px;
+      }
+    }
+  }
 
 }

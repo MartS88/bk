@@ -37,7 +37,10 @@ const Cards = () => {
     };
 
     const handleLoadMoreClick = async () => {
-        if (bookData && bookData?.totalItems !== undefined && startIndex < bookData?.totalItems) {
+
+            if (bookData && bookData?.totalItems !== undefined && startIndex <= bookData?.totalItems) {
+                console.log('statI', startIndex)
+                console.log('bookITems', bookData?.totalItems)
             try {
 
                 const responseData = await searchBooks();
@@ -51,6 +54,7 @@ const Cards = () => {
                 setTimeout(() => {
                     setLoader(false);
                 }, 1000);
+                console.log('start', startIndex,bookData?.totalItems)
 
             } catch (error) {
                 console.error('Error:', error);
@@ -67,6 +71,40 @@ const Cards = () => {
             queryClient.setQueryData('bookData', data);
         }
     }, [data, isError, isLoading]);
+
+
+    const [scrollToStart, setScrollToStart] = useState(false);
+    const [scrollToEnd, setScrollToEnd] = useState(false);
+
+    const handleScrollToStart = () => {
+        setScrollToStart(true);
+        setScrollToEnd(false);
+    };
+
+    const handleScrollToEnd = () => {
+        setScrollToStart(false);
+        setScrollToEnd(true);
+    };
+
+    useEffect(() => {
+        if (scrollToStart) {
+
+            window.scrollTo(0, 0);
+            setScrollToStart(false);
+        }
+
+        if (scrollToEnd) {
+
+            const element = document.getElementById('end');
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            setScrollToEnd(false);
+        }
+    }, [scrollToStart, scrollToEnd]);
+
+
 
 
     if (loading) {
@@ -103,7 +141,7 @@ const Cards = () => {
                     <div className={s.start}
                          id='start'
                     >
-                        <a href="#end"> Read the latest Books  <AiOutlineArrowDown size={15} color='blue'/></a>
+                        <span onClick={handleScrollToEnd}> Read the latest Books  <AiOutlineArrowDown size={15} color='blue'/></span>
 
                     </div>
 
@@ -132,17 +170,18 @@ const Cards = () => {
                         )}
 
 
+
                         <div
                             className={s.end}
                             id='end'>
+
                             <div>
-                                <a href="#start">Read the top Books   <AiOutlineArrowUp size={15} color='blue'/></a>
+                                <span onClick={handleScrollToStart}>Read the top Books   <AiOutlineArrowUp size={15} color='blue'/></span>
 
                             </div>
 
                         </div>
-                        <button onClick={handleLoadMoreClick} className={s.load_more_button}>Load more</button>
-
+                            <button onClick={handleLoadMoreClick} className={s.load_more_button}>Load more</button>
                     </div>
 
                 </div>
