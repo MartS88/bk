@@ -53,7 +53,7 @@ const Cards = () => {
                 setTimeout(() => {
                     setLoader(false);
                 }, 1000);
-                console.log('start', startIndex,bookData?.totalItems)
+
 
             } catch (error) {
                 console.error('Error:', error);
