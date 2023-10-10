@@ -5,7 +5,7 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import {Provider} from "react-redux";
 import {setupStore} from './store/store'
 import Home from "./pages/home/Home";
-import CardContent from "./pages/cartcontent/CardContent";
+import CardContent from "./pages/cardcontent/CardContent";
 import {QueryClient, QueryClientProvider} from 'react-query';
 
 const queryClient = new QueryClient();

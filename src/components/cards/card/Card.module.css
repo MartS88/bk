@@ -10,6 +10,7 @@
 }
 .card:hover {
   transform: scale(100%);
+  filter: sepia(55%);
 }
 .card .more {
   cursor: pointer;

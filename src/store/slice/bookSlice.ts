@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {BookSearchResult} from "../../types/BookSearchResult";
+import {BookSearchResult} from "../../types/bookSearch_types";
 import {bookItem} from "../../types/bookItem";
 import {GetBookParams} from "../../types/GetBookParams";
 

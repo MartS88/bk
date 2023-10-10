@@ -4,7 +4,6 @@ import {SELECT_OPTIONS, SORT_SELECT_OPTIONS} from '../../constants/constants';
 import {addBookArr, setIsError, setIsLoading, setSearchParams} from '../../store/slice/bookSlice'
 import {useDispatch} from "react-redux";
 import {FcSearch} from 'react-icons/fc';
-import {RootState} from "../../store/store";
 import { useQuery,useQueryClient } from 'react-query';
 
 
@@ -19,6 +18,7 @@ const SearchForm = () => {
 
     const categoryHandleChange = (e: any) => {
         setCategoryOption(e.target.value);
+
     };
 
     const sortHandleChange = (e: any) => {
@@ -27,9 +27,12 @@ const SearchForm = () => {
     };
 
     const searchBooks = async () => {
+
         const response = await fetch(
             `https://www.googleapis.com/books/v1/volumes/?q=${search}+subject:${categoryOption}&maxResults=30&startIndex=${startIndex}&orderBy=${sortOption}&+&key=`
         );
+        console.log('cat', categoryOption)
+        console.log('opt,' , sortOption)
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
