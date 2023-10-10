@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {BookSearchResult} from "../../types/bookSearch_types";
+import {BookSearchResult} from "../../types/BookSearchResult";
 import {bookItem} from "../../types/bookItem";
-import {GetBookParams} from "../../types/search_types";
+import {GetBookParams} from "../../types/GetBookParams";
 
 interface BookState {
     booksData: BookSearchResult | null;
@@ -10,8 +10,7 @@ interface BookState {
     selectedBook: bookItem | null;
     startIndex: number,
     searchParams: GetBookParams | null,
-    searchMode: boolean;
-    updatedMode: boolean;
+
 }
 
 const initialState: BookState = {
@@ -21,8 +20,7 @@ const initialState: BookState = {
     selectedBook: null,
     startIndex: 0,
     searchParams: null,
-    searchMode: false,
-    updatedMode: false,
+
 
 };
 
@@ -47,10 +45,6 @@ const bookSlice = createSlice({
         setSearchParams:(state,action: PayloadAction<GetBookParams>)=>{
             state.searchParams = action.payload
         },
-        setStartIndex:(state,action: PayloadAction<number>)=>{
-            state.startIndex = action.payload
-        }
-
     },
 });
 
@@ -60,43 +54,9 @@ export const {
     setIsLoading,
     setIsError,
     setSearchParams,
-    setStartIndex,
+
 
 } = bookSlice.actions;
 
 export default bookSlice.reducer;
 
-
-// import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-//
-//
-// interface BookState {
-//     booksArr: any[];
-//
-// }
-//
-// const initialState: BookState = {
-//     booksArr: [],
-//
-// };
-//
-// const bookSlice = createSlice({
-//     name: "books",
-//     initialState,
-//     reducers: {
-//         addBookArr: (state, action: PayloadAction<any[]>) => {
-//             state.booksArr = action.payload;
-//         },
-//         setSelectedBook: (state, action: PayloadAction<any[]>) => {
-//
-//         }
-//
-//     },
-// });
-//
-// export const { addBookArr } = bookSlice.actions;
-//
-// export default bookSlice.reducer;
-//
-//
-//

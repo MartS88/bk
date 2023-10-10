@@ -6,6 +6,7 @@
   box-shadow: 5px 4px 8px -1px rgba(10, 5, 1, 0.3);
   transform: scale(90%);
   transition: all 0.3s ease !important;
+  cursor: pointer;
 }
 .card:hover {
   transform: scale(100%);
@@ -53,9 +54,15 @@
   text-underline-offset: 4px;
 }
 .card .card_block .author {
+  padding: 3px;
+  display: flex;
+  justify-content: center;
   font-family: "Roboto";
   font-size: 1.34rem;
   color: rgba(25, 25, 178, 0.97);
+}
+.card .card_block .author span {
+  padding-top: 5px !important;
 }
 
 /*# sourceMappingURL=Card.module.css.map */

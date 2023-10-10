@@ -4,40 +4,70 @@
   width: 100%;
 
   .color_ring {
-
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
 
-  .cards_block {
-    padding-bottom: 50px;
-    background: whitesmoke!important;
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    font-size: 1.5rem;
+    font-family: 'Roboto';
+    font-weight: 500;
+  }
+}
 
-    .load_more_button {
-      background: black;
-    }
+.cards_block {
+  background: whitesmoke;
 
-    div {
-      padding-top: 20px;
-      margin-bottom: 20px;
-      span {
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.5rem;
-        font-family: 'Roboto';
+  .start {
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+    position: sticky;
+    align-self: end;
+
+    a {
+      font-family: 'Roboto';
+      font-weight: 500 !important;
+      color: rgb(56, 97, 251) !important;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      font-size: 1.5rem !important;
+
+      &:hover {
+        color: rgb(56, 134, 251) !important;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 6px;
+        transition: all .1s ease;
       }
     }
+
+
   }
+
+
+  .load_more_button {
+    background: black;
+  }
+
+
   .card_block {
-    justify-content: space-between!important;
-    display: grid!important;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))!important;
-    gap: 10px!important;
+    margin-bottom: 50px;
+    justify-content: space-between !important;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+    gap: 10px !important;
   }
+
   .error {
     display: flex;
     flex-direction: row;
@@ -56,18 +86,64 @@
     }
 
   }
-  .load_more_button {
+
+
+  .button_block {
+    padding-bottom: 100px;
+
+
+    .end {
+      margin-bottom: 10px;
+      font-family: 'Roboto';
+      font-weight: 500 !important;
+      color: rgb(56, 97, 251) !important;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      text-decoration: none;
+      padding-right: 10px;
+
+
+      a {
+        font-family: 'Roboto';
+        font-weight: 500 !important;
+        color: rgb(56, 97, 251) !important;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        font-size: 1.5rem !important;
+        transition: all .1s ease;
+
+        &:hover {
+          color: rgb(56, 134, 251) !important;
+          text-decoration: underline;
+          text-decoration-thickness: 1px;
+          text-underline-offset: 6px;
+
+        }
+      }
+    }
+
+    .loader {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    .load_more_button {
       margin: 0 auto;
+      padding: 11px 15px;
       width: 100%;
       max-width: 300px;
-      background: rgb(56, 97, 251)!important;
+      background: rgb(56, 97, 251) !important;
       border-radius: 5px;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 20px;
       cursor: pointer;
-      padding: 10px 25px;
       color: white;
       transition: all .1s ease;
       border: none;
@@ -75,9 +151,11 @@
 
       &:hover {
         cursor: pointer;
-        background: rgb(56, 134, 251)!important;
+        background: rgb(56, 134, 251) !important;
 
       }
     }
+  }
+
 
 }

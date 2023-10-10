@@ -12,15 +12,23 @@ const Card = ({ book }: { book: bookItem }) => {
 
     const bookItemHander = (book: bookItem) => {
        dispatch(setSelectedBook(book))
+       navigate('/card')
     }
-
+    const handleImageError = (e:any) => {
+        e.target.src = require('../../../assets/error.jpg')
+    };
     return (
         <div
             onClick={() => bookItemHander(book)}
             className={s.card}>
-            <span onClick={() => navigate('/card')} className={s.more}>More</span>
             <div className={s.card_block}>
-                <img src={book?.volumeInfo?.imageLinks?.smallThumbnail} width={150} draggable={false} alt={book?.volumeInfo?.title} />
+                <img
+
+                    src={book?.volumeInfo?.imageLinks?.smallThumbnail}
+                    width={150}
+                    draggable={false}
+                    alt={require('../../../assets/error.jpg')}
+                />
 
                 {book?.volumeInfo?.categories && (
 

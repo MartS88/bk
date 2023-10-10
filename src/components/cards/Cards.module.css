@@ -7,46 +7,107 @@
   justify-content: center;
   align-items: center;
 }
-.cards .cards_block {
-  padding-bottom: 50px;
-  background: whitesmoke !important;
-}
-.cards .cards_block .load_more_button {
-  background: black;
-}
-.cards .cards_block div {
-  padding-top: 20px;
-  margin-bottom: 20px;
-}
-.cards .cards_block div span {
+.cards span {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 30px;
   font-size: 1.5rem;
   font-family: "Roboto";
+  font-weight: 500;
 }
-.cards .card_block {
+
+.cards_block {
+  background: whitesmoke;
+}
+.cards_block .start {
+  padding-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+  position: sticky;
+  align-self: end;
+}
+.cards_block .start a {
+  font-family: "Roboto";
+  font-weight: 500 !important;
+  color: rgb(56, 97, 251) !important;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.5rem !important;
+}
+.cards_block .start a:hover {
+  color: rgb(56, 134, 251) !important;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+  transition: all 0.1s ease;
+}
+.cards_block .load_more_button {
+  background: black;
+}
+.cards_block .card_block {
+  margin-bottom: 50px;
   justify-content: space-between !important;
   display: grid !important;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
   gap: 10px !important;
 }
-.cards .error {
+.cards_block .error {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
-.cards .error svg {
+.cards_block .error svg {
   color: red;
   width: 30px;
 }
-.cards .error h2 {
+.cards_block .error h2 {
   font-size: 1.5rem;
   font-family: "Roboto";
 }
-.cards .load_more_button {
+.cards_block .button_block {
+  padding-bottom: 100px;
+}
+.cards_block .button_block .end {
+  margin-bottom: 10px;
+  font-family: "Roboto";
+  font-weight: 500 !important;
+  color: rgb(56, 97, 251) !important;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-decoration: none;
+  padding-right: 10px;
+}
+.cards_block .button_block .end a {
+  font-family: "Roboto";
+  font-weight: 500 !important;
+  color: rgb(56, 97, 251) !important;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.5rem !important;
+  transition: all 0.1s ease;
+}
+.cards_block .button_block .end a:hover {
+  color: rgb(56, 134, 251) !important;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+}
+.cards_block .button_block .loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+.cards_block .button_block .load_more_button {
   margin: 0 auto;
+  padding: 11px 15px;
   width: 100%;
   max-width: 300px;
   background: rgb(56, 97, 251) !important;
@@ -56,12 +117,11 @@
   justify-content: center;
   gap: 20px;
   cursor: pointer;
-  padding: 10px 25px;
   color: white;
   transition: all 0.1s ease;
   border: none;
 }
-.cards .load_more_button:hover {
+.cards_block .button_block .load_more_button:hover {
   cursor: pointer;
   background: rgb(56, 134, 251) !important;
 }
