@@ -131,9 +131,7 @@ const Cards = () => {
                             </div>
                         )}
 
-                        {/*{startIndex === bookData?.totalItems && (*/}
-                        {/*    <h1>No more active data</h1>*/}
-                        {/*{console.log('da', startIndex === bookData?.totalItems)})}*/}
+
                         <div
                             className={s.end}
                             id='end'>
